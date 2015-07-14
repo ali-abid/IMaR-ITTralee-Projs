@@ -1,29 +1,38 @@
 
 ***************************************************************************
-#Run Application:
+#How to run Application?
 
 ##Step 1: Connect wifi Edimax
 
 Login to RaspberryPi:
+
 cd /etc/network/ sudo nano interfaces
 
 auto lo
+
 iface lo inet loopback
+
 iface eth0 inet dhcp
 
 allow-hotplug wlan0
+
 auto wlan0
 
 iface wlan0 inet dhcp
+
    wpa-ssid "Your Network SSID"
+
    wpa-psk "Your Password"
 
 
 //Save the file and exit 
+
 Ctrl+O, Ctrl+X.         
 
 //Reboot RaspberryPi
+
 // RaspberryPi speak IP address and port number 8081,
+
 //if connected successfully to wifi network.
 
 
@@ -32,25 +41,34 @@ Ctrl+O, Ctrl+X.
 //Power up RaspberryPi and it will speak IP address and Port number 
 
 //Type IP address and port number in your smart phone browser
-    XXX.XXX.XXX.X:8081
+
+    XXX.XXX.XXX.XX:8081
 
 ****************************************************************************
 
 
-#Install fibin_TeddyBear_mobile_web_app on RaspberryPi
 
-##Install nginx on RaspberryPi
+
+
+
+
+#How to install Fibin Teddy Bear mobile web application on RaspberryPi?
+
+##Download nginx on RaspberryPi
 source: http://www.raspipress.com/2014/06/tutorial-install-nginx-and-php-on-raspbian/
 
 sudo apt-get install nginx
 
 
-##Install nodejs on RaspberryPi
+##Download nodejs on RaspberryPi
 
 sudo apt-get install node
 
 
-##Download following project into RaspberryPi.  e.g. home/pi/fibin_TeddyBear_mobile_web_app  
+##Download project into RaspberryPi.  
+
+e.g. home/pi/fibin_TeddyBear_mobile_web_app  
+
 source: https://github.com/ali-abid/IMaR-ITTralee-Projs/tree/master/fibin_TeddyBear_mobile_web_app 
 
 
