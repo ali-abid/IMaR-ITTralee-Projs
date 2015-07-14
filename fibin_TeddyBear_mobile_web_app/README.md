@@ -23,14 +23,9 @@ source: https://github.com/ali-abid/IMaR-ITTralee-Projs/tree/master/fibin_TeddyB
 
 sudo /etc/init.d/nginx start  
 
-
-
-
-/etc/init.d/nginx start
-
 //Start nodejs
 
-/home/pi/node/node-v0.10.2-linux-arm-pi/bin/node  /home/pi/fibin_TeddyBear_mobile_web_app/socket.js
+/home/pi/node/node-v0.10.2-linux-arm-pi/bin/node [Give space here] /home/pi/fibin_TeddyBear_mobile_web_app/socket.js
 
 ##Auto start nginx and nodejs on RaspberryPi boot up
 
