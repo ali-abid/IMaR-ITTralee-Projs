@@ -82,12 +82,14 @@ Ctrl+O, Ctrl+X.
 
 ##Step 2: Connect Smart Phone on same wifi network
 
-//Power up RaspberryPi and it will speak IP address and Port number 
+//Power up RaspberryPi and it will speak IP address and Port number with in two minutes depends on bootup speed. 
 
 //Type IP address and port number in your smart phone browser
 
-    XXX.XXX.XXX.XX:8081
+    http://XXX.XXX.XXX.XX:8081
 
+// Make sure your phone and RaspberryPi are connected on same wifi network. 
+	
 ****************************************************************************
 
 
