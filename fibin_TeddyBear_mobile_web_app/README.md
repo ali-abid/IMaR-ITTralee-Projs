@@ -1,8 +1,8 @@
 
 ***************************************************************************
-##Run Application:
+#Run Application:
 
-#Step 1: Connect wifi Edimax
+##Step 1: Connect wifi Edimax
 
 Login to RaspberryPi:
 cd /etc/network/ sudo nano interfaces
@@ -27,7 +27,7 @@ Ctrl+O, Ctrl+X.
 //if connected successfully to wifi network.
 
 
-#Step 2: Connect Smart Phone on same wifi network
+##Step 2: Connect Smart Phone on same wifi network
 
 //Power up RaspberryPi and it will speak IP address and Port number 
 
@@ -37,17 +37,30 @@ Ctrl+O, Ctrl+X.
 ****************************************************************************
 
 
-##How to install fibin_TeddyBear_mobile_web_app on RaspberryPi
+#Install fibin_TeddyBear_mobile_web_app on RaspberryPi
 
-#Install nginx on RaspberryPi
+##Install nginx on RaspberryPi
+source: http://www.raspipress.com/2014/06/tutorial-install-nginx-and-php-on-raspbian/
 
-#Install nodejs on RaspberryPi
+sudo apt-get install nginx
 
-#Download https://github.com/ali-abid/IMaR-ITTralee-Projs/tree/master/fibin_TeddyBear_mobile_web_app 
-complete folder into your RaspberryPi.  e.g. home/pi/fibin_TeddyBear_mobile_web_app 
 
-#Manually start nginx and nodejs
+##Install nodejs on RaspberryPi
+
+sudo apt-get install node
+
+
+##Download following project into RaspberryPi.  e.g. home/pi/fibin_TeddyBear_mobile_web_app  
+source: https://github.com/ali-abid/IMaR-ITTralee-Projs/tree/master/fibin_TeddyBear_mobile_web_app 
+
+
+##Manually start nginx and nodejs
 //Start nginx
+
+sudo /etc/init.d/nginx start  
+
+
+
 
 /etc/init.d/nginx start
 
@@ -55,7 +68,7 @@ complete folder into your RaspberryPi.  e.g. home/pi/fibin_TeddyBear_mobile_web_
 
 /home/pi/node/node-v0.10.2-linux-arm-pi/bin/node  /home/pi/fibin_TeddyBear_mobile_web_app/socket.js
 
-#Auto start nginx and nodejs on RaspberryPi boot up
+##Auto start nginx and nodejs on RaspberryPi boot up
 
 sudo crontab –e  //Type in RaspberryPi terminal
 
@@ -68,3 +81,4 @@ sudo crontab –e  //Type in RaspberryPi terminal
 
 Note: anyName files use for debugging purpose
 
+********************************************************************************************
