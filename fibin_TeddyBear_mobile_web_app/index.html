@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Teddy Bear</title>
+<link rel="stylesheet" href="css/temp.css" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<p align = "center">
+<table border=0 width="20%" height="30%">
+   <tr>
+	<td><font size="8">"I am teddy bear"</font></td>
+	<td class = "up" id="w"><font size="8">"Wrong"</font></td>
+  </tr>
+ <tr>
+    <td class = "up" id="b1"><font size="8">"LEFT HAND"</font></td>
+    <td class = "up" id="b2"><font size="8">"RIGHT HAND"</font></td>
+  </tr>
+  <tr>
+    <td class = "up" id="b3"><font size="8">"LEFT LEG"</font></td>
+    <td class = "up" id="b4"><font size="8">"RIGHT LEG"</font></td>
+  </tr>
+</table>
+</p>
+<center>
+<h2>IMaR Technology Gateway, Institute Of Technology Tralee.</h2>
+<h3>Fibin Teddy Bear 2015.</h3>
+</center>
+</body>
+<style>
+.up {background-color: black}
+.down {background-color: green}
+.downError {background-color: red}
+</style>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect();
+
+  var toggle = function(node, val) {
+    node.className = (val === 1 ? "down" : "up");
+  }
+  var toggleError = function(node, val) {
+    node.className = (val === 1 ? "downError" : "up");
+  }
+
+  socket.on('news', function (data) {
+    var d = document.getElementById("title");
+    d.innerHTML = data.hello;
+  });
+  socket.on('b1', function(data) {
+    var d = document.getElementById("b1");
+    toggle(d, data.v);
+  });
+  socket.on('b2', function(data) {
+    var d = document.getElementById("b2");
+    toggle(d, data.v);
+  });
+  socket.on('b3', function(data) {
+    var d = document.getElementById("b3");
+    toggle(d, data.v);
+  });
+  socket.on('b4', function(data) {
+    var d = document.getElementById("b4");
+    toggle(d, data.v);
+  });
+  socket.on('w', function(data) {
+    var d = document.getElementById("w");
+    toggleError(d, data.v);
+  });
+  
+</script>
+</html>
